@@ -72,7 +72,7 @@ impl Compiler {
             } else {
                 return Err(executable.into());
             }
-        } else if target.ends_with("-pc-windows-msvc") {
+        } else if target.ends_with("-pc-windows-msvc") || target.ends_with("-win7-windows-msvc") {
             if is_runnable("llvm-rc") {
                 return Ok(Compiler {
                     tp: CompilerType::LlvmRc {
